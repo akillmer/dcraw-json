@@ -32,4 +32,4 @@ latitude and longitude coordinates (if available).
 		"latitude": -33.855833,
 		"longitude": 151.219722
 	}
-}```
+}
