@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -o ./dcraw -O4 dcraw.c -lm -DNODEPS
+gcc -o ./dcraw-json -O4 dcraw.c -lm -DNODEPS
