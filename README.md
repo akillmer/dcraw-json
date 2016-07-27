@@ -20,11 +20,11 @@ latitude and longitude coordinates (if available).
 	"shutterSpeed": 0.001250,
 	"aperture": 7.1,
 	"focalLength": 33.3,
-	"thumbnail": {
+	"thumbSize": {
 		"width": 160,
 		"height": 122
 	},
-	"fullImage": {
+	"imageSize": {
 		"width": 1024,
 		"height": 768
 	},
