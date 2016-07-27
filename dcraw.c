@@ -10089,10 +10089,10 @@ int CLASS main (int argc, const char **argv)
         printf(",\n");
       } else
       printf("null,\n");*/
-      printf("\t\"isoSpeed\": %d,\n", (int) iso_speed);
-      printf("\t\"shutterSpeed\": %f,\n", shutter);
+      printf("\t\"iso\": %d,\n", (int) iso_speed);
+      printf("\t\"shutter\": %f,\n", shutter);
       printf("\t\"aperture\": %0.1f,\n", aperture);
-      printf ("\t\"focalLength\": %0.1f,\n", focal_len);
+      printf ("\t\"focal\": %0.1f,\n", focal_len);
        /* printf ("\t\"iccProfile\": ");
         if (profile_length)
       printf ("true");
@@ -10114,7 +10114,7 @@ int CLASS main (int argc, const char **argv)
       printf ("\t},\n");
         } else
       printf ("null,\n");
-        printf("\t\"imageSize\": {\n");
+        printf("\t\"fullSize\": {\n");
         printf("\t\t\"width\": %4d,\n", raw_width);
         printf("\t\t\"height\": %d\n", raw_height);
         printf("\t},\n");

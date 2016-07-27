@@ -16,15 +16,15 @@ latitude and longitude coordinates (if available).
 		"make": "Minolta",
 		"model": "DiMAGE A2"
 	},
-	"isoSpeed": 100,
-	"shutterSpeed": 0.001250,
+	"iso": 100,
+	"shutter": 0.001250,
 	"aperture": 7.1,
-	"focalLength": 33.3,
+	"focal": 33.3,
 	"thumbSize": {
 		"width": 160,
 		"height": 122
 	},
-	"imageSize": {
+	"fullSize": {
 		"width": 1024,
 		"height": 768
 	},
