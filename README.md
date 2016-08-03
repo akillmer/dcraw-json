@@ -6,7 +6,7 @@ are in favor over strings, for example: `shutterSpeed: 0.001250` instead of `shu
 I did code in the other tags but they're commented out (and not really tested). But as a bonus GPS data is provided as 
 latitude and longitude coordinates (if available).
 
-`$ ./dcraw -i -v -J /home/andy/Pictures/australia.jpg`
+`$ ./dcraw-json -i -v -J /home/andy/Pictures/australia.jpg`
 
 ```json
 {
