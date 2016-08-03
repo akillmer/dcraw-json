@@ -10067,16 +10067,16 @@ int CLASS main (int argc, const char **argv)
     if (identify_only && verbose && make[0]) {
       if (json_output) {
         /* for my particular needs i only need some exif metadata, uncomment them if you need to */
-        printf ("{\n");
-        printf("\t\"filename\": \"%s\",\n", ifname);
+        printf ("{");
+        printf("\"filename\": \"%s\",", ifname);
         /*char *str_timestamp = ctime(&timestamp);
         str_timestamp[strlen(str_timestamp)-1] = 0; // drop the newline
         printf("\t\"timestamp\": \"%s\",\n", str_timestamp);*/
-        printf("\t\"timestamp\": %u, \n", timestamp);
-        printf("\t\"camera\": {\n");
-        printf("\t\t\"make\": \"%s\",\n", make);
-        printf("\t\t\"model\": \"%s\"\n", model);
-        printf("\t},\n");
+        printf("\"timestamp\": %u,", timestamp);
+        printf("\"camera\": {");
+        printf("\"make\": \"%s\",", make);
+        printf("\"model\": \"%s\"", model);
+        printf("},");
         /*printf("\t\"owner\": ");
         if (artist[0])
       printf ("\"%s\",\n", artist);
@@ -10089,42 +10089,42 @@ int CLASS main (int argc, const char **argv)
         printf(",\n");
       } else
       printf("null,\n");*/
-      printf("\t\"iso\": %d,\n", (int) iso_speed);
-      printf("\t\"shutter\": %f,\n", shutter);
-      printf("\t\"aperture\": %0.1f,\n", aperture);
-      printf ("\t\"focal\": %0.1f,\n", focal_len);
-       /* printf ("\t\"iccProfile\": ");
+      printf("\"iso\": %d,", (int) iso_speed);
+      printf("\"shutter\": %f,", shutter);
+      printf("\"aperture\": %0.1f,", aperture);
+      printf ("\"focal\": %0.1f,", focal_len);
+       /* printf ("\"iccProfile\": ");
         if (profile_length)
       printf ("true");
         else
       printf ("false");
-        printf (",\n");
-        printf ("\t\"rawImages\": %d,\n", is_raw);
-        printf ("\t\"aspectRatio\": ");
+        printf (",");
+        printf ("\"rawImages\": %d,\n", is_raw);
+        printf ("\"aspectRatio\": ");
         if (pixel_aspect != 1)
       printf ("%0.6f", pixel_aspect);
         else
         printf ("null");
-        printf (",\n");*/
-        printf ("\t\"thumbSize\": ");
+        printf (",");*/
+        printf ("\"thumbSize\": ");
         if (thumb_offset) {
-      printf ("{\n");
-      printf ("\t\t\"width\": %d,\n", thumb_width);
-      printf ("\t\t\"height\": %d\n", thumb_height);
-      printf ("\t},\n");
+      printf ("{");
+      printf ("\"width\": %d,", thumb_width);
+      printf ("\"height\": %d", thumb_height);
+      printf ("},");
         } else
-      printf ("null,\n");
-        printf("\t\"fullSize\": {\n");
-        printf("\t\t\"width\": %4d,\n", raw_width);
-        printf("\t\t\"height\": %d\n", raw_height);
-        printf("\t},\n");
-        printf("\t\"gps\": ");
+      printf ("null,");
+        printf("\"fullSize\": {");
+        printf("\"width\": %4d,", raw_width);
+        printf("\"height\": %d", raw_height);
+        printf("},");
+        printf("\"gps\": ");
 
         double lat_ref = gps_ref(gpsdata[29]);
         double long_ref = gps_ref(gpsdata[30]);
 
         if (lat_ref == 0 && long_ref == 0) {
-          printf("null\n");
+          printf("null");
         } else {
           double latitude[3];
           double longitude[3];
@@ -10137,10 +10137,10 @@ int CLASS main (int argc, const char **argv)
           longitude[1] = (gpsdata[8] / gpsdata[9]) / 60.0;      // minutes
           longitude[2] = (gpsdata[10] / gpsdata[11]) / 3600.0;  // seconds
 
-          printf("{\n");
-          printf("\t\t\"latitude\": %f,\n", (latitude[0] + latitude[1] + latitude[2]) * lat_ref);
-          printf("\t\t\"longitude\": %f\n", (longitude[0] + longitude[1] + longitude[2]) * long_ref);
-          printf("\t}\n");
+          printf("{");
+          printf("\"latitude\": %f,", (latitude[0] + latitude[1] + latitude[2]) * lat_ref);
+          printf("\"longitude\": %f", (longitude[0] + longitude[1] + longitude[2]) * long_ref);
+          printf("}");
         }
         printf("}\n");
         goto next;  // this is all the json output provides, skip the rest
