@@ -10142,7 +10142,7 @@ int CLASS main (int argc, const char **argv)
           printf("\"longitude\": %f", (longitude[0] + longitude[1] + longitude[2]) * long_ref);
           printf("}");
         }
-        printf("}\n");
+        printf("}");
         goto next;  // this is all the json output provides, skip the rest
       } else {  
           printf (_("\nFilename: %s\n"), ifname);
